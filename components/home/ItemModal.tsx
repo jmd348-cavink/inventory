@@ -1,9 +1,15 @@
 import { updateStocks } from "@/actions/stockItems";
-import { ItemListUI } from "@/app/(tabs)";
+import { stockItem } from "@/lib/db";
 import { FontAwesome } from "@expo/vector-icons";
 import { useState } from "react";
-import { Modal, Pressable, Text, TextInput, View } from "react-native";
-import { ToastAndroid } from "react-native";
+import {
+  Modal,
+  Pressable,
+  Text,
+  TextInput,
+  ToastAndroid,
+  View,
+} from "react-native";
 
 export const ItemModal = ({
   isOpen,
@@ -11,7 +17,7 @@ export const ItemModal = ({
   setIsModalOpen,
 }: {
   isOpen: boolean;
-  stock: ItemListUI;
+  stock: stockItem;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [text, setText] = useState("");
